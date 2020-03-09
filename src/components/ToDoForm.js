@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { IoIosAddCircleOutline } from 'react-icons/io';
 import shortid from 'shortid';
 
 class ToDoForm extends Component {
@@ -27,13 +28,23 @@ class ToDoForm extends Component {
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
-        <input
-          name="text"
-          onChange={this.handleChange}
-          value={this.state.text}
-          placeholder="add a todo..."
-        />
-        <button onClick={this.handleSubmit}>Add Item</button>
+        <div className="flex items-center border-b border-b-2 border-white">
+          <div className="flex w-full px-4">
+            <input
+              className="appearance-none bg-transparent border-none w-full text-midnightink-headline text-xl placeholder-text-indigo-900 mr-3 leading-tight focus:outline-none"
+              name="text"
+              onChange={this.handleChange}
+              value={this.state.text}
+              placeholder="add a new todo..."
+            />
+            <button
+              className="w-1/4 px-2 py-4 mb-2"
+              onClick={this.handleSubmit}
+            >
+              <IoIosAddCircleOutline className="flex text-3xl m-auto text-midnightink-button" />
+            </button>
+          </div>
+        </div>
       </form>
     );
   }

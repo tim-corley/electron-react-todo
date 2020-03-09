@@ -1,26 +1,11 @@
 import React, { Component } from 'react';
 import ToDoList from './components/ToDoList';
+import './styles/app.css';
 
 class App extends Component {
-  state = {
-    count: 0
-  };
-
-  increment = () => {
-    this.setState({
-      count: this.state.count + 1
-    });
-  };
-
-  decrement = () => {
-    this.setState({
-      count: this.state.count - 1
-    });
-  };
-
   render() {
     return (
-      <div className="App">
+      <div className="flex h-screen bg-midnightink-background">
         <ToDoList />
       </div>
     );

@@ -28,9 +28,11 @@
     "react-scripts": "3.4.0"
   },
   "scripts": {
+    "build:style": "tailwind build src/styles/tailwind.css -o src/styles/app.css",
+    "watch:style": "postcss src/styles/tailwind.css -o src/styles/app.css -w",
     "electron": "cross-env NODE_ENV=dev nodemon --exec \"\"electron .\"\"",
-    "start": "cross-env BROWSER=none react-scripts start",
-    "build": "react-scripts build",
+    "start": "cross-env BROWSER=none react-scripts start && npm run watch:style",
+    "build": "react-scripts build && npm run build:style",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -50,9 +52,13 @@
     ]
   },
   "devDependencies": {
+    "autoprefixer": "^9.7.4",
     "electron-builder": "^22.4.0",
     "electron-reload": "^1.5.0",
     "nodemon": "^2.0.2",
-    "shortid": "^2.2.15"
+    "postcss-cli": "^7.1.0",
+    "react-icons": "^3.9.0",
+    "shortid": "^2.2.15",
+    "tailwindcss": "^1.2.0"
   }
 }
