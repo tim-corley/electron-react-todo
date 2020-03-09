@@ -52,6 +52,7 @@
   "devDependencies": {
     "electron-builder": "^22.4.0",
     "electron-reload": "^1.5.0",
-    "nodemon": "^2.0.2"
+    "nodemon": "^2.0.2",
+    "shortid": "^2.2.15"
   }
 }

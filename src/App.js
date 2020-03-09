@@ -1,7 +1,30 @@
-import React from 'react';
+import React, { Component } from 'react';
+import ToDoList from './components/ToDoList';
 
-function App() {
-  return <h1>My Daily To-Do Desktop Application</h1>;
+class App extends Component {
+  state = {
+    count: 0
+  };
+
+  increment = () => {
+    this.setState({
+      count: this.state.count + 1
+    });
+  };
+
+  decrement = () => {
+    this.setState({
+      count: this.state.count - 1
+    });
+  };
+
+  render() {
+    return (
+      <div className="App">
+        <ToDoList />
+      </div>
+    );
+  }
 }
 
 export default App;
