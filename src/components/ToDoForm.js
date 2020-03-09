@@ -38,7 +38,7 @@ class ToDoForm extends Component {
               placeholder="add a new todo..."
             />
             <button
-              className="w-1/4 px-2 py-4 mb-2"
+              className="w-1/4 px-2 py-4 mb-2 focus:outline-none"
               onClick={this.handleSubmit}
             >
               <IoIosAddCircleOutline className="flex text-3xl m-auto text-midnightink-button" />
