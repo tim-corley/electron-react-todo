@@ -9,10 +9,13 @@ const path = require('path');
 let mainWindow;
 
 function createWindow() {
-  // LAUNCH APP @ TOP-RIGHT
-  let display = electron.screen.getPrimaryDisplay();
-  let width = display.bounds.width;
+  // LAUNCH APP @ TOP-RIGHT, FULL HEIGHT
+  const display = electron.screen.getPrimaryDisplay();
+  const area = display.workAreaSize;
+  const height = area.height;
+  const width = display.bounds.width;
   mainWindow = new BrowserWindow({
+    height,
     width: 600,
     x: width - 600,
     y: 0,
