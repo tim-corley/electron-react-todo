@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import ToDoList from './components/ToDoList';
+import MainCard from './components/MainCard';
 import './styles/app.css';
 
 class App extends Component {
   render() {
     return (
-      <div className="flex h-screen bg-midnightink-background">
-        <ToDoList />
+      <div className="flex h-screen bg-local img-bg">
+        <MainCard />
       </div>
     );
   }
