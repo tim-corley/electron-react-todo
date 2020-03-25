@@ -25,6 +25,14 @@ module.exports = {
         stroke: '#121629'
       },
 
+      minwarm: {
+        lightsand: '#EAE7DC',
+        darksand: '#D8C3A5',
+        gray: '#8E8D8A',
+        red: '#D86357',
+        green: '#65ACA8'
+      },
+
       gray: {
         100: '#f7fafc',
         200: '#edf2f7',

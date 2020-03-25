@@ -14,6 +14,9 @@ function createWindow() {
   const area = display.workAreaSize;
   const height = area.height;
   const width = display.bounds.width;
+  console.log(width - 600);
+  console.log(height);
+
   mainWindow = new BrowserWindow({
     height,
     width: 600,
