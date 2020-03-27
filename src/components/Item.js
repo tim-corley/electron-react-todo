@@ -1,11 +1,12 @@
 import React from 'react';
 import { GoTrashcan } from 'react-icons/go';
 
+// DISPLAY A TODO ROW (ANONYMOUS COMPONENT)
 export default props => (
   <div className="relative w-full p-2 mt-2 shadow-lg rounded border-2 border-midnightink-stroke text-midnightink-headline">
     <div
       style={{
-        textDecoration: props.todo.complete ? 'line-through' : ''
+        textDecoration: props.todo.isComplete ? 'line-through' : ''
       }}
       onClick={props.toggleComplete}
     >

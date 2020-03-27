@@ -2,7 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'Highway Gothic', sans-serif;
+  src: local('HWYGOTH'), url('../fonts/HWYGOTH.TTF') format('ttf');
+}
+
 .img-bg {
   background-image: url('../img/background-image.jpg');
   background-size: cover;
+}
+
+.header-content {
+  font-family: Highway Gothic;
 }

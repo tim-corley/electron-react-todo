@@ -1,11 +1,12 @@
 import React from 'react';
 import ToDoForm from './ToDoForm';
-import ToDoItem from './ToDoItem';
+import ToDoItem from './Item';
 
 export default class TodoList extends React.Component {
   state = {
     todos: [],
-    todoToShow: 'all'
+    todoToShow: 'all',
+    toggleAllComplete: true
   };
 
   addTodo = todo => {
@@ -115,6 +116,32 @@ export default class TodoList extends React.Component {
                 </span>
               </div>
             </div>
+          </div>
+          <div className="m-auto text-center">
+            <div className="inline-block text-midnightink-headline p-1 mx-1">
+              <input
+                type="checkbox"
+                onChange={() =>
+                  this.setState(state => ({
+                    todos: state.todos.map(todo => ({
+                      ...todo,
+                      complete: state.toggleAllComplete
+                    })),
+                    toggleAllComplete: !state.toggleAllComplete
+                  }))
+                }
+              />{' '}
+              <button> Mark All Complete</button>
+            </div>
+            {this.state.todos.some(todo => todo.complete) ? (
+              <div className="inline-block text-midnightink-headline p-1 mx-1">
+                <input
+                  type="checkbox"
+                  onChange={this.removeAllTodosThatAreComplete}
+                />{' '}
+                <button>Remove Completed</button>
+              </div>
+            ) : null}
           </div>
         </div>
       </div>

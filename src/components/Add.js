@@ -2,18 +2,19 @@ import React, { useState } from 'react';
 import { IoIosAddCircleOutline } from 'react-icons/io';
 
 // ADD NEW TODO TO APP STATE VIA INPUT FORM
-const ToDoForm = ({ saveNewTodo }) => {
-  const [value, setValue] = useState('');
+const AddForm = ({ saveNewTodo }) => {
+  // COMPONENT LEVEL STATE -->
+  const [task, setTask] = useState('');
 
   const resetValue = () => {
-    setValue('');
+    setTask('');
   };
 
   return (
     <form
       onSubmit={event => {
         event.preventDefault();
-        saveNewTodo(value);
+        saveNewTodo(task);
         resetValue();
       }}
     >
@@ -23,9 +24,9 @@ const ToDoForm = ({ saveNewTodo }) => {
             className="appearance-none bg-transparent border-none w-full text-midnightink-headline text-xl placeholder-text-indigo-900 mr-3 leading-tight focus:outline-none"
             name="text"
             onChange={event => {
-              setValue(event.target.value);
+              setTask(event.target.value);
             }}
-            value={value}
+            value={task}
             placeholder="add a new task..."
           />
           <button
@@ -33,7 +34,7 @@ const ToDoForm = ({ saveNewTodo }) => {
             className="w-1/4 px-2 py-4 mb-2 focus:outline-none"
             onClick={event => {
               event.preventDefault();
-              saveNewTodo(value);
+              saveNewTodo(task);
               resetValue();
             }}
           >
@@ -45,4 +46,4 @@ const ToDoForm = ({ saveNewTodo }) => {
   );
 };
 
-export default ToDoForm;
+export default AddForm;
