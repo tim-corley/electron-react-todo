@@ -7,7 +7,11 @@ const List = ({ todos, toggleComplete }) => {
   return (
     <div>
       {todos.map(todo => (
-        <Item key={todo.id} todo={todo} />
+        <Item
+          key={todo.id}
+          todo={todo}
+          toggleComplete={() => toggleComplete(todo.id)}
+        />
       ))}
     </div>
   );
