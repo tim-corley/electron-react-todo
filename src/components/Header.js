@@ -6,20 +6,22 @@ import { FaEllipsisH } from 'react-icons/fa';
 
 const Header = ({ saveNewTodo }) => {
   return (
-    <>
-      <div className="block"></div>
+    <div className="header-container">
+      <div className="header-block"></div>
       <div className="separator reverse"></div>
-      {/* ELLIPSIS */}
-      <div>
-        <FaEllipsisH />
+      <div className="header-content">
+        {/* ELLIPSIS */}
+        <div>
+          <FaEllipsisH />
+        </div>
+        {/* DEFAULT VIEW */}
+        <Home />
+        {/* SHOW WHEN ADDING NEW TASK, ADD BTN CLICK */}
+        <Add saveNewTodo={saveNewTodo} />
+        {/* SHOW WHEN TOGGLING TASKS, ELLIPSIS CLICK */}
+        <Edit />
       </div>
-      {/* DEFAULT VIEW */}
-      <Home />
-      {/* SHOW WHEN ADDING NEW TASK, ADD BTN CLICK */}
-      <Add saveNewTodo={saveNewTodo} />
-      {/* SHOW WHEN TOGGLING TASKS, ELLIPSIS CLICK */}
-      <Edit />
-    </>
+    </div>
   );
 };
 

@@ -2,7 +2,7 @@ import React from 'react';
 
 export const Edit = () => {
   return (
-    <div className="header-content">
+    <div className="edit-content">
       {/* SHOW ACTIVE ONLY */}
       <h1>ACTIVE TASKS</h1>
       {/* SHOW COMPLETED ONLY */}

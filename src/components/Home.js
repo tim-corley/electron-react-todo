@@ -9,7 +9,7 @@ export const Home = () => {
     return `${month} ${day}, ${year}`;
   };
   return (
-    <div className="header-content">
+    <div className="home-content">
       {/* DATE */}
       <div>{makeDate()}</div>
       {/* TASK COUNT */}
