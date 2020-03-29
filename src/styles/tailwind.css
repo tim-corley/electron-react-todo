@@ -15,3 +15,37 @@
 .header-content {
   font-family: Highway Gothic;
 }
+
+.block {
+  width: 100%;
+  height: 30%;
+  background-color: #eae7dc;
+}
+
+.separator {
+  position: relative;
+  width: 100%;
+  height: 30%;
+}
+
+.separator::before {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 100%;
+  background-color: #eae7dc;
+  clip-path: polygon(100% 0, 0 0, 0 45%);
+}
+
+/* .separator::after {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  clip-path: polygon(100% 0, 0 100%, 100% 100%);
+} */
+
+.separator.reverse {
+  transform: rotateY(180deg);
+}

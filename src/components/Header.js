@@ -7,6 +7,8 @@ import { FaEllipsisH } from 'react-icons/fa';
 const Header = ({ saveNewTodo }) => {
   return (
     <>
+      <div className="block"></div>
+      <div className="separator reverse"></div>
       {/* ELLIPSIS */}
       <div>
         <FaEllipsisH />
