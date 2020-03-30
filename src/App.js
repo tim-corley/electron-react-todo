@@ -8,7 +8,7 @@ const App = () => {
   const [todoBase, setTodoBase] = useState([]);
   const [showTodo, setShowTodo] = useState('all');
   const [todoFiltered, setTodoFiltered] = useState([]);
-  // const [tasksRemaining, setTasksRemaining] = useState(0);
+  const [tasksDue, setTasksDue] = useState(0);
 
   useEffect(() => {
     let tempTodos;
@@ -23,6 +23,10 @@ const App = () => {
       setTodoFiltered(tempTodos);
     }
   }, [todoBase, showTodo]);
+
+  useEffect(() => {
+    updateTasksDue();
+  });
 
   const saveNewTodo = text => {
     setTodoBase([
@@ -49,11 +53,20 @@ const App = () => {
     setShowTodo(string);
   };
 
+  const updateTasksDue = () => {
+    const notCompleteCount = todoBase.filter(todo => !todo.isComplete).length;
+    setTasksDue(notCompleteCount);
+  };
+
   return (
     <div className="flex h-screen bg-local img-bg">
       <div className="m-auto h-auto w-11/12 my-8 rounded shadow-lg bg-white opacity-75">
         <>
-          <Header saveNewTodo={saveNewTodo} updateToShow={updateToShow} />
+          <Header
+            saveNewTodo={saveNewTodo}
+            updateToShow={updateToShow}
+            tasksDue={tasksDue}
+          />
           <List
             todos={todoFiltered}
             toggleComplete={toggleComplete}

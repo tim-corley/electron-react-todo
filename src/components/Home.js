@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const Home = () => {
+const Home = ({ tasksDue }) => {
   const makeDate = () => {
     const today = new Date();
     const day = today.getDate();
@@ -8,13 +8,24 @@ export const Home = () => {
     const year = today.getFullYear();
     return `${month} ${day}, ${year}`;
   };
+  const formatTasksDue = taskDue => {
+    let tasksDueText;
+    if (tasksDue === 0) {
+      tasksDueText = 'No Tasks Due';
+    } else if (tasksDue === 1) {
+      tasksDueText = '1 Task Due';
+    } else {
+      tasksDueText = `${tasksDue} Tasks Due`;
+    }
+    return tasksDueText;
+  };
   return (
-    <div className="home-content">
+    <div className="header-content">
       {/* DATE */}
       <div>{makeDate()}</div>
       {/* TASK COUNT */}
       <div>
-        <p>No Tasks Due</p>
+        <p>{formatTasksDue()}</p>
       </div>
       {/* TITLE */}
       <h1>TODAY'S TASKS</h1>
