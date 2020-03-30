@@ -4,7 +4,7 @@ import Add from './Add';
 import Edit from './Edit';
 import { FaEllipsisH } from 'react-icons/fa';
 
-const Header = ({ saveNewTodo }) => {
+const Header = ({ saveNewTodo, updateToShow }) => {
   return (
     <div className="header-container">
       <div className="header-block"></div>
@@ -19,7 +19,7 @@ const Header = ({ saveNewTodo }) => {
         {/* SHOW WHEN ADDING NEW TASK, ADD BTN CLICK */}
         <Add saveNewTodo={saveNewTodo} />
         {/* SHOW WHEN TOGGLING TASKS, ELLIPSIS CLICK */}
-        <Edit />
+        <Edit updateToShow={updateToShow} />
       </div>
     </div>
   );

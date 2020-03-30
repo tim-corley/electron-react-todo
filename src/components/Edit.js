@@ -1,14 +1,22 @@
 import React from 'react';
 
-export const Edit = () => {
+export const Edit = ({ updateToShow }) => {
   return (
     <div className="edit-content">
       {/* SHOW ACTIVE ONLY */}
-      <h1>ACTIVE TASKS</h1>
+      <span>
+        <button onClick={() => updateToShow('active')}>ACTIVE TASKS</button>
+      </span>
       {/* SHOW COMPLETED ONLY */}
-      <h1>COMPLETED TASKS</h1>
+      <span>
+        <button onClick={() => updateToShow('complete')}>
+          COMPLETED TASKS
+        </button>
+      </span>
       {/* SHOW ALL */}
-      <h1>ALL TASKS</h1>
+      <span>
+        <button onClick={() => updateToShow('all')}>ALL TASKS</button>
+      </span>
     </div>
   );
 };

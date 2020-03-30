@@ -2,8 +2,6 @@ import React from 'react';
 import Item from './Item';
 
 const List = ({ todos, toggleComplete, deleteItem }) => {
-  // const [toShow, settoShow] = useState('all');
-
   return (
     <div>
       {todos.map(todo => (
