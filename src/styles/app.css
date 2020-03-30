@@ -11449,6 +11449,11 @@ video {
   grid-area: 1 / 1;
 }
 
+.ellipsis {
+  display: flex;
+  justify-content: flex-end;
+}
+
 @media (min-width: 640px) {
   .sm\:sr-only {
     position: absolute;

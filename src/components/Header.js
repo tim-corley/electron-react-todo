@@ -11,7 +11,7 @@ const Header = ({ saveNewTodo }) => {
       <div className="separator reverse"></div>
       <div className="header-content">
         {/* ELLIPSIS */}
-        <div>
+        <div className="text-4xl ellipsis">
           <FaEllipsisH />
         </div>
         {/* DEFAULT VIEW */}

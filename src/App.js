@@ -12,13 +12,17 @@ const App = () => {
   };
 
   const toggleComplete = id => {
-    const updatedToDo = [...todos];
-    updatedToDo.map(todo => {
+    const todoCopy = [...todos];
+    todoCopy.map(todo => {
       if (todo.id === id) {
         todo.isComplete = !todo.isComplete;
       }
-      return setTodos(updatedToDo);
+      return setTodos(todoCopy);
     });
+  };
+
+  const deleteItem = id => {
+    return setTodos(todos.filter(todo => todo.id !== id));
   };
 
   return (
@@ -26,7 +30,11 @@ const App = () => {
       <div className="m-auto h-auto w-11/12 my-8 rounded shadow-lg bg-white opacity-75">
         <>
           <Header saveNewTodo={saveNewTodo} />
-          <List todos={todos} toggleComplete={toggleComplete} />
+          <List
+            todos={todos}
+            toggleComplete={toggleComplete}
+            deleteItem={deleteItem}
+          />
         </>
       </div>
     </div>
