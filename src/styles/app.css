@@ -11454,6 +11454,57 @@ video {
   justify-content: flex-end;
 }
 
+.swivel:hover {
+  transform: rotate(90deg);
+}
+
+.tooltipMenu {
+  width: 90%;
+}
+
+.tooltipMenu ul li {
+  color: #1a202c;
+  padding: 10px 20px 10px 20px;
+  font-size: 24px;
+  width: 100%;
+  background: #d8c3a5;
+}
+
+.tooltipMenu ul {
+  box-shadow: 5px 5px 20px grey;
+}
+
+.tooltipMenu ul li:hover {
+  background: #1a202c;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.tooltip {
+  width: 12rem;
+  display: flex;
+  position: relative;
+  justify-content: flex-end;
+  margin-right: 0.5rem;
+}
+
+.tooltipMenu {
+  visibility: hidden;
+  position: absolute;
+  z-index: 1;
+}
+
+.ellipsis:hover .tooltipMenu {
+  visibility: visible;
+  cursor: pointer;
+}
+
+.leftSide {
+  right: -25%;
+  top: 25%;
+}
+
 @media (min-width: 640px) {
   .sm\:sr-only {
     position: absolute;

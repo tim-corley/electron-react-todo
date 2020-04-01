@@ -38,7 +38,7 @@ const AddForm = ({ saveNewTodo }) => {
               resetValue();
             }}
           >
-            <IoIosAddCircleOutline className="flex text-5xl m-auto text-midnightink-button" />
+            <IoIosAddCircleOutline className="flex text-5xl m-auto text-minwarm-gray" />
           </button>
         </div>
       </div>
