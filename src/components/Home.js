@@ -20,7 +20,7 @@ const Home = ({ tasksDue }) => {
     return tasksDueText;
   };
   return (
-    <div className="header-content">
+    <div className="header-items">
       {/* DATE */}
       <div>{makeDate()}</div>
       {/* TASK COUNT */}

@@ -11,25 +11,27 @@ const AddForm = ({ saveNewTodo }) => {
   };
 
   return (
-    <form
-      onSubmit={event => {
-        event.preventDefault();
-        saveNewTodo(task);
-        resetValue();
-      }}
-    >
-      <div className="flex items-center border-b border-b-2 border-white">
-        <div className="flex w-full px-4">
-          <input
-            className="appearance-none bg-transparent border-none w-full text-midnightink-headline text-xl placeholder-text-indigo-900 mr-3 leading-tight focus:outline-none"
-            name="text"
-            onChange={event => {
-              setTask(event.target.value);
-            }}
-            value={task}
-            placeholder="add a new task..."
-          />
-          <button
+    <>
+      <h1>NEW TASK:</h1>
+      <form
+        onSubmit={event => {
+          event.preventDefault();
+          saveNewTodo(task);
+          resetValue();
+        }}
+      >
+        <div className="flex items-center border-b border-b-2 border-white input">
+          <div className="flex w-full p-4">
+            <input
+              className="appearance-none bg-transparent border-none w-full text-black text-xl placeholder-white mr-3 leading-tight focus:outline-none"
+              name="text"
+              onChange={event => {
+                setTask(event.target.value);
+              }}
+              value={task}
+              placeholder="add a task..."
+            />
+            {/* <button
             type="submit"
             className="w-1/4 px-2 py-4 mb-2 focus:outline-none"
             onClick={event => {
@@ -39,10 +41,11 @@ const AddForm = ({ saveNewTodo }) => {
             }}
           >
             <IoIosAddCircleOutline className="flex text-5xl m-auto text-minwarm-gray" />
-          </button>
+          </button> */}
+          </div>
         </div>
-      </div>
-    </form>
+      </form>
+    </>
   );
 };
 

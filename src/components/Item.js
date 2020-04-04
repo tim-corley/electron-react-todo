@@ -12,12 +12,14 @@ const Item = ({ todo, toggleComplete, deleteItem }) => (
     >
       {todo.text}
     </div>
-    <button
-      className="absolute inset-y-0 right-0 p-2"
-      onClick={() => deleteItem(todo.id)}
-    >
-      <GoTrashcan />
-    </button>
+    <div>
+      <button
+        className="absolute inset-y-0 right-0 p-2"
+        onClick={() => deleteItem(todo.id)}
+      >
+        <GoTrashcan />
+      </button>
+    </div>
   </div>
 );
 

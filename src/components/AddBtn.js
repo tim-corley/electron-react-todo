@@ -7,19 +7,21 @@ const AddBtn = ({ saveNewTodo }) => {
     setTask('');
   };
   return (
-    <div>
-      <button
-        type="submit"
-        className="w-1/4 px-2 py-4 mb-2 focus:outline-none"
-        onClick={event => {
-          event.preventDefault();
-          saveNewTodo(task);
-          resetValue();
-        }}
-      >
-        <IoIosAddCircleOutline className="flex text-5xl m-auto text-minwarm-gray" />
-      </button>
-    </div>
+    <button
+      type="submit"
+      className="w-1/4 px-2 py-4 mb-2 focus:outline-none"
+      onClick={event => {
+        event.preventDefault();
+        saveNewTodo(task);
+        resetValue();
+      }}
+    >
+      <div className="mdc-fab circle shadow-lg focus:outline-none">
+        <span className="text-white text-6xl mdc-fab__icon material-icons">
+          add
+        </span>
+      </div>
+    </button>
   );
 };
 

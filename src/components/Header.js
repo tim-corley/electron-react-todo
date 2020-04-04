@@ -5,37 +5,127 @@ import Edit from './Edit';
 import AddBtn from './AddBtn';
 import { FaEllipsisH } from 'react-icons/fa';
 
+// make header it owns component - move this out to a "Nav" component
 const Header = ({ saveNewTodo, updateToShow, tasksDue }) => {
-  const [appMode, setAppMode] = useState('home');
-  return (
-    <div className="header-container">
-      <div className="header-block"></div>
-      <div className="separator reverse"></div>
-      <div className="header-content">
-        {/* ELLIPSIS */}
+  const [appMode, setAppMode] = useState('add');
+  if (appMode === 'home') {
+    return (
+      <div className="header-items">
+        {/* ELLIPSIS & TOOLTIP MENU */}
         <div className="text-4xl ellipsis">
           <div className="tooltip">
             <div className="tooltipMenu leftSide">
               <ul>
-                <li>Home</li>
-                <li>Add</li>
-                <li>Edit</li>
+                <li
+                  onClick={event => {
+                    setAppMode(event.target.innerText.toLowerCase());
+                  }}
+                >
+                  Home
+                </li>
+                <li
+                  onClick={event => {
+                    setAppMode(event.target.innerText.toLowerCase());
+                  }}
+                >
+                  Add
+                </li>
+                <li
+                  onClick={event => {
+                    setAppMode(event.target.innerText.toLowerCase());
+                  }}
+                >
+                  Edit
+                </li>
               </ul>
             </div>
           </div>
-          <div className="swivel">
+          <div>
             <FaEllipsisH />
           </div>
         </div>
-        {/* DEFAULT VIEW */}
         <Home tasksDue={tasksDue} />
-        {/* SHOW WHEN ADDING NEW TASK, ADD BTN CLICK */}
+      </div>
+    );
+  } else if (appMode === 'add') {
+    return (
+      <div className="header-items">
+        {/* ELLIPSIS & TOOLTIP MENU */}
+        <div className="text-4xl ellipsis">
+          <div className="tooltip">
+            <div className="tooltipMenu leftSide">
+              <ul>
+                <li
+                  onClick={event => {
+                    setAppMode(event.target.innerText.toLowerCase());
+                  }}
+                >
+                  Home
+                </li>
+                <li
+                  onClick={event => {
+                    setAppMode(event.target.innerText.toLowerCase());
+                  }}
+                >
+                  Add
+                </li>
+                <li
+                  onClick={event => {
+                    setAppMode(event.target.innerText.toLowerCase());
+                  }}
+                >
+                  Edit
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div>
+            <FaEllipsisH />
+          </div>
+        </div>
         <Add saveNewTodo={saveNewTodo} />
-        {/* SHOW WHEN TOGGLING TASKS, ELLIPSIS CLICK */}
+      </div>
+    );
+  } else if (appMode === 'edit') {
+    return (
+      <div className="header-items">
+        {/* ELLIPSIS & TOOLTIP MENU */}
+        <div className="text-4xl ellipsis">
+          <div className="tooltip">
+            <div className="tooltipMenu leftSide">
+              <ul>
+                <li
+                  onClick={event => {
+                    setAppMode(event.target.innerText.toLowerCase());
+                  }}
+                >
+                  Home
+                </li>
+                <li
+                  onClick={event => {
+                    setAppMode(event.target.innerText.toLowerCase());
+                  }}
+                >
+                  Add
+                </li>
+                <li
+                  onClick={event => {
+                    setAppMode(event.target.innerText.toLowerCase());
+                  }}
+                >
+                  Edit
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div>
+            <FaEllipsisH />
+          </div>
+        </div>
         <Edit updateToShow={updateToShow} />
       </div>
-    </div>
-  );
+    );
+  }
 };
 
 export default Header;

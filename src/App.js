@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Header from './components/Header';
+import AddBtn from './components/AddBtn';
 import List from './components/List';
 import shortid from 'shortid';
 import './styles/app.css';
@@ -60,13 +61,19 @@ const App = () => {
 
   return (
     <div className="flex h-screen bg-local img-bg">
-      <div className="m-auto h-auto w-11/12 my-8 rounded shadow-lg bg-white opacity-75">
+      <div className="m-auto h-auto w-11/12 my-8 rounded-lg shadow-lg bg-white">
+        <div className="header-container">
+          <div className="header-block rounded-t-lg"></div>
+          <div className="separator reverse"></div>
+          <div className="header-content"></div>
+        </div>
         <>
           <Header
             saveNewTodo={saveNewTodo}
             updateToShow={updateToShow}
             tasksDue={tasksDue}
           />
+          <AddBtn />
           <List
             todos={todoFiltered}
             toggleComplete={toggleComplete}
