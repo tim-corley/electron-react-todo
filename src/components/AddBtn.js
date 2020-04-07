@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { IoIosAddCircleOutline } from 'react-icons/io';
 
 const AddBtn = ({ saveNewTodo }) => {
   const [task, setTask] = useState('');

@@ -6,22 +6,41 @@ import shortid from 'shortid';
 import './styles/app.css';
 
 const App = () => {
+  const defaultView = {
+    activeValue: false,
+    completeValue: false,
+    allValue: true
+  };
+  const activeView = {
+    activeValue: true,
+    completeValue: false,
+    allValue: false
+  };
+  const completeView = {
+    activeValue: false,
+    completeValue: true,
+    allValue: false
+  };
   const [todoBase, setTodoBase] = useState([]);
   const [showTodo, setShowTodo] = useState('all');
   const [todoFiltered, setTodoFiltered] = useState([]);
   const [tasksDue, setTasksDue] = useState(0);
+  const [switchValues, setSwitchValues] = useState(defaultView);
 
   useEffect(() => {
     let tempTodos;
     if (showTodo === 'all') {
       tempTodos = todoBase;
       setTodoFiltered(tempTodos);
+      setSwitchValues(defaultView);
     } else if (showTodo === 'active') {
       tempTodos = todoBase.filter(todo => !todo.isComplete);
       setTodoFiltered(tempTodos);
+      setSwitchValues(activeView);
     } else if (showTodo === 'complete') {
       tempTodos = todoBase.filter(todo => todo.isComplete);
       setTodoFiltered(tempTodos);
+      setSwitchValues(completeView);
     }
   }, [todoBase, showTodo]);
 
@@ -71,6 +90,7 @@ const App = () => {
           saveNewTodo={saveNewTodo}
           updateToShow={updateToShow}
           tasksDue={tasksDue}
+          switchValues={switchValues}
         />
         <div className="btn-container">
           <AddBtn />

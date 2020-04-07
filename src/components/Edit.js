@@ -1,23 +1,20 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Switch from './Switch';
 
-export const Edit = ({ updateToShow }) => {
-  const [activeValue, setActiveValue] = useState(false);
-  const [completeValue, setCompleteValue] = useState(false);
-  const [allValue, setAllValue] = useState(true);
+export const Edit = ({ updateToShow, switchValues }) => {
   return (
     <div className="edit-content">
       <div className="p-2">
         <Switch
           switchId={'active-switch'}
-          isOn={activeValue}
-          handleToggle={() => setActiveValue(!activeValue)}
-          onClick={() => updateToShow('active')}
+          isOn={switchValues.activeValue}
+          handleToggle={() => {
+            updateToShow('active');
+          }}
         />
         <span>
           <button
             onClick={() => {
-              setActiveValue(!activeValue);
               updateToShow('active');
             }}
           >
@@ -28,14 +25,14 @@ export const Edit = ({ updateToShow }) => {
       <div className="p-2">
         <Switch
           switchId={'completed-switch'}
-          isOn={completeValue}
-          handleToggle={() => setCompleteValue(!completeValue)}
-          onClick={() => updateToShow('complete')}
+          isOn={switchValues.completeValue}
+          handleToggle={() => {
+            updateToShow('complete');
+          }}
         />
         <span>
           <button
             onClick={() => {
-              setCompleteValue(!completeValue);
               updateToShow('complete');
             }}
           >
@@ -46,14 +43,14 @@ export const Edit = ({ updateToShow }) => {
       <div className="p-2">
         <Switch
           switchId={'all-switch'}
-          isOn={allValue}
-          handleToggle={() => setAllValue(!allValue)}
-          onClick={() => updateToShow('all')}
+          isOn={switchValues.allValue}
+          handleToggle={() => {
+            updateToShow('all');
+          }}
         />
         <span>
           <button
             onClick={() => {
-              setAllValue(!allValue);
               updateToShow('all');
             }}
           >

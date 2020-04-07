@@ -2,11 +2,10 @@ import React, { useState } from 'react';
 import Home from './Home';
 import Add from './Add';
 import Edit from './Edit';
-import AddBtn from './AddBtn';
 import { FaEllipsisH } from 'react-icons/fa';
 
 // make header it owns component - move this out to a "Nav" component
-const Header = ({ saveNewTodo, updateToShow, tasksDue }) => {
+const Header = ({ saveNewTodo, updateToShow, tasksDue, switchValues }) => {
   const [appMode, setAppMode] = useState('edit');
   if (appMode === 'home') {
     return (
@@ -122,7 +121,7 @@ const Header = ({ saveNewTodo, updateToShow, tasksDue }) => {
             <FaEllipsisH />
           </div>
         </div>
-        <Edit updateToShow={updateToShow} />
+        <Edit updateToShow={updateToShow} switchValues={switchValues} />
       </div>
     );
   }

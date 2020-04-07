@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { IoIosAddCircleOutline } from 'react-icons/io';
 
 // ADD NEW TODO TO APP STATE VIA INPUT FORM
 const AddForm = ({ saveNewTodo }) => {
