@@ -3,22 +3,19 @@ import { GoTrashcan } from 'react-icons/go';
 
 // DISPLAY A TODO ROW (ANONYMOUS COMPONENT)
 const Item = ({ todo, toggleComplete, deleteItem }) => (
-  <div className="relative w-full p-2 mt-2 shadow-lg rounded border-2 border-midnightink-stroke text-black">
-    <div
-      onClick={() => toggleComplete(todo.id)}
-      style={{
-        textDecoration: todo.isComplete ? 'line-through' : ''
-      }}
-    >
-      {todo.text}
-    </div>
-    <div>
-      <button
-        className="absolute inset-y-0 right-0 p-2"
-        onClick={() => deleteItem(todo.id)}
+  <div className="mx-5">
+    <button className="inline-block" onClick={() => deleteItem(todo.id)}>
+      <GoTrashcan />
+    </button>
+    <div className="inline-block w-4/5 p-3 m-3 ml-6 shadow-lg rounded text-black">
+      <div
+        onClick={() => toggleComplete(todo.id)}
+        style={{
+          textDecoration: todo.isComplete ? 'line-through' : ''
+        }}
       >
-        <GoTrashcan />
-      </button>
+        {todo.text}
+      </div>
     </div>
   </div>
 );

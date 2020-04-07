@@ -67,19 +67,19 @@ const App = () => {
           <div className="separator reverse"></div>
           <div className="header-content"></div>
         </div>
-        <>
-          <Header
-            saveNewTodo={saveNewTodo}
-            updateToShow={updateToShow}
-            tasksDue={tasksDue}
-          />
+        <Header
+          saveNewTodo={saveNewTodo}
+          updateToShow={updateToShow}
+          tasksDue={tasksDue}
+        />
+        <div className="btn-container">
           <AddBtn />
-          <List
-            todos={todoFiltered}
-            toggleComplete={toggleComplete}
-            deleteItem={deleteItem}
-          />
-        </>
+        </div>
+        <List
+          todos={todoFiltered}
+          toggleComplete={toggleComplete}
+          deleteItem={deleteItem}
+        />
       </div>
     </div>
   );
