@@ -11602,6 +11602,20 @@ video {
   width: 60px;
 }
 
+.bottom-block {
+  position: relative;
+  height: 50%;
+  width: 100%;
+}
+
+.list-container {
+  position: absolute;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  overflow: scroll;
+}
+
 @media (min-width: 640px) {
   .sm\:sr-only {
     position: absolute;

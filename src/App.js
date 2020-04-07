@@ -95,11 +95,15 @@ const App = () => {
         <div className="btn-container">
           <AddBtn />
         </div>
-        <List
-          todos={todoFiltered}
-          toggleComplete={toggleComplete}
-          deleteItem={deleteItem}
-        />
+        <div className="bottom-block">
+          <div className="list-container">
+            <List
+              todos={todoFiltered}
+              toggleComplete={toggleComplete}
+              deleteItem={deleteItem}
+            />
+          </div>
+        </div>
       </div>
     </div>
   );
