@@ -3,8 +3,8 @@ import Switch from './Switch';
 
 export const Edit = ({ updateToShow, switchValues }) => {
   return (
-    <div className="edit-content">
-      <div className="p-2">
+    <div>
+      <div className="flex m-2 p-2">
         <Switch
           switchId={'active-switch'}
           isOn={switchValues.activeValue}
@@ -12,8 +12,9 @@ export const Edit = ({ updateToShow, switchValues }) => {
             updateToShow('active');
           }}
         />
-        <span>
+        <span className="flex-1 ml-3">
           <button
+            className="focus:outline-none"
             onClick={() => {
               updateToShow('active');
             }}
@@ -22,7 +23,7 @@ export const Edit = ({ updateToShow, switchValues }) => {
           </button>
         </span>
       </div>
-      <div className="p-2">
+      <div className="flex m-2 p-2">
         <Switch
           switchId={'completed-switch'}
           isOn={switchValues.completeValue}
@@ -30,8 +31,9 @@ export const Edit = ({ updateToShow, switchValues }) => {
             updateToShow('complete');
           }}
         />
-        <span>
+        <span className="flex-1 ml-3">
           <button
+            className="focus:outline-none"
             onClick={() => {
               updateToShow('complete');
             }}
@@ -40,7 +42,7 @@ export const Edit = ({ updateToShow, switchValues }) => {
           </button>
         </span>
       </div>
-      <div className="p-2">
+      <div className="flex m-2 p-2">
         <Switch
           switchId={'all-switch'}
           isOn={switchValues.allValue}
@@ -48,8 +50,9 @@ export const Edit = ({ updateToShow, switchValues }) => {
             updateToShow('all');
           }}
         />
-        <span>
+        <span className="flex-1 ml-3">
           <button
+            className="focus:outline-none"
             onClick={() => {
               updateToShow('all');
             }}

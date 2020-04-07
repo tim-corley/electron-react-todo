@@ -6,7 +6,7 @@ import { FaEllipsisH } from 'react-icons/fa';
 
 // make header it owns component - move this out to a "Nav" component
 const Header = ({ saveNewTodo, updateToShow, tasksDue, switchValues }) => {
-  const [appMode, setAppMode] = useState('edit');
+  const [appMode, setAppMode] = useState('home');
   if (appMode === 'home') {
     return (
       <div className="header-items">
